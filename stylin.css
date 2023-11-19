@@ -150,7 +150,7 @@ footer {
 footer a {
     font-size: 2.6em;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
     transition: letter-spacing 300ms;
 }
 
