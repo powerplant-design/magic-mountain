@@ -124,6 +124,7 @@ iframe {
     border: dashed 10px var(--white) !important;
     filter: grayscale(1);
     max-width: 80vw;
+    max-height: 50vh;
 }
 
 footer {
