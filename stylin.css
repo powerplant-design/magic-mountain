@@ -156,21 +156,29 @@ footer a {
 }
 
 footer a:hover {
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
 
 @media only screen and (max-width: 600px) {
-    .container {
-        min-height: 100vh;
+    .hero {
+        min-height: 90vh;
     }
 
     .logo {
         height: unset;
-        width: 70vw;
+        width: 60vw;
+    }
+
+    h1 {
+        font-size: 2.4rem;
     }
 
     iframe {
         border: dashed 10px var(--white) !important;
+    }
+
+    footer {
+        padding-bottom: 1.4em;
     }
 
     .footer-wrapper {
@@ -179,7 +187,7 @@ footer a:hover {
 
     footer a {
         padding-top: 0.2em;
-        font-size: 2em;
+        font-size: 1.4em;
         text-align: center;
     }
 }
