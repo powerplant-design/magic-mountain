@@ -1,5 +1,5 @@
 :root {
-    --white: #f3f3f3;
+    --white: #fff;
     --green: #00683a;
 }
 
@@ -41,6 +41,12 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+@keyframes parralax {
+    to {
+        transform: translateY(calc(var(--parralax-speed) * -50px));
+    }
+}
+
 @font-face {
     font-family: Callina-Script;
     src: url(./assets/BNCallinaScript.otf);
@@ -76,21 +82,8 @@ h1 {
 
 h2 {
     color: var(--white);
-    text-transform: uppercase;
-}
-
-.text-1 {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: rotate(90deg);
-}
-
-.text-2 {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: rotate(-90deg);/
+    font-family: "Callina-Script";
+    font-size: 4.2rem;
 }
 
 .container {
@@ -118,6 +111,42 @@ h2 {
     height: 32vw;
     transition: scale 1000ms;
     animation: pulse ease-in-out 2000ms infinite alternate;
+}
+
+.parralax {
+    z-index: 0;
+    width: 60vw;
+    display: grid;
+    grid-template-areas: "stack";
+    mix-blend-mode: screen;
+    position: relative;
+}
+
+.parralax > * {
+    grid-area: stack;
+    animation: parralax linear;
+    animation-timeline: scroll();
+}
+
+.parralax svg {
+    mix-blend-mode: difference;
+}
+
+.parralax-01 {
+    z-index: 2;
+    --parralax-speed: 2;
+}
+.parralax-02 {
+    z-index: 3;
+    --parralax-speed: 1;
+}
+.parralax-03 {
+    z-index: 4;
+    --parralax-speed: -1;
+}
+.parralax-04 {
+    z-index: 5;
+    --parralax-speed: -4;
 }
 
 iframe {
@@ -151,6 +180,8 @@ footer {
 footer a {
     font-size: 2.6em;
     text-decoration: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--green);
     color: var(--white);
     transition: letter-spacing 300ms;
 }
@@ -171,6 +202,11 @@ footer a:hover {
 
     h1 {
         font-size: 2.4rem;
+    }
+
+    .nope,
+    .parralax {
+        display: none;
     }
 
     iframe {
