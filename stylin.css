@@ -113,9 +113,14 @@ h2 {
     animation: pulse ease-in-out 2000ms infinite alternate;
 }
 
+.logo a,
+.logo svg {
+    user-select: none;
+}
+
 .parralax {
     z-index: 0;
-    width: 60vw;
+    width: 50vw;
     display: grid;
     grid-template-areas: "stack";
     mix-blend-mode: screen;
@@ -146,7 +151,7 @@ h2 {
 }
 .parralax-04 {
     z-index: 5;
-    --parralax-speed: -4;
+    --parralax-speed: -3;
 }
 
 iframe {
@@ -191,6 +196,14 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
+
+    section {
+        scroll-snap-align: center;
+    }
+
     .hero {
         min-height: 90vh;
     }
@@ -198,6 +211,7 @@ footer a:hover {
     .logo {
         height: unset;
         width: 60vw;
+        pointer-events: none;
     }
 
     h1 {
